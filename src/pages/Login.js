@@ -10,9 +10,28 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { ADD_USER, ADD_PRODUCTS, LOGIN_USER } from "../store/constant";
 
 function Login() {
   let navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
+  // const productList = useSelector((state) => state.product.productList);
+  //
+  // useEffect(() => {
+  //   if (!productList.length) {
+  //     axios
+  //       .get("https://jsonplaceholder.typicode.com/posts")
+  //       .then((responce) => {
+  //         console.log("responce", responce.data);
+  //         dispatch({
+  //           type: ADD_PRODUCTS,
+  //           products: responce.data,
+  //         });
+  //       });
+  //   }
+  // }, []);
 
   const paperStyle = {
     padding: 20,
@@ -32,33 +51,31 @@ function Login() {
     setUserName(event.target.value);
   };
 
+  useEffect(() => {}, []);
+
   const passwordChangeHadler = (event) => {
     setPassword(event.target.value);
   };
 
-  // const loginHandler = () => {
-  //   if (userName == "sample" && password == "sample123") {
-  //     localStorage.setItem("isUserLogin", 1);
-  //     return navigate("/home");
-  //   } else {
-  //     setShowLoginError(true);
-  //   }
-  // };
-
   const loginHandler = (event) => {
     event.preventDefault();
+    setLoading(true);
     axios
       .post("https://fakestoreapi.com/auth/login", {
         username: userName,
         password: password,
       })
       .then((parameters) => {
-        console.log(parameters, "parameter in post axios");
-        localStorage.setItem("isUserLogin", 1);
-
+        setLoading(false);
+        dispatch({
+          type: LOGIN_USER,
+          name: userName,
+          token: parameters.data.token,
+        });
         return navigate("/home");
       })
       .catch(() => {
+        setLoading(false);
         setShowLoginError(true);
       });
   };
@@ -105,8 +122,9 @@ function Login() {
             variant="contained"
             style={btnstyle}
             fullWidth
+            disabled={loading}
           >
-            Login
+            {loading ? "Loading" : "Login"}
           </Button>
         </form>
         <Typography>

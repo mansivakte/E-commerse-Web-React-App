@@ -1,0 +1,9 @@
+- avoid unnecessory api call
+- store all api call data into redux
+- product details madhun dispatch ( remove dipatch from cart )
+- css fixes
+  - change qty buttons
+  - remove buy now
+  - remove footer
+  - productincart page design
+  - productincart product image with product list

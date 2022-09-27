@@ -28,6 +28,10 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import userEvent from "@testing-library/user-event";
+import Badge from "@mui/material/Badge";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Contact"];
@@ -36,6 +40,12 @@ function Header(props) {
   let navigate = useNavigate();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const loginUser = useSelector((state) => state.user.name);
+
+  const cartCount = useSelector((state) => state.product.length);
+
+  // const countOfItems = useSelector((state) => state.cart.cart);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -99,6 +109,21 @@ function Header(props) {
           >
             Log Out
           </Button>
+          <h3> Welcome {loginUser} </h3>
+          {cartCount > 0 ? (
+            <Button
+              color="inherit"
+              onClick={() => {
+                localStorage.removeItem("isUserLogin");
+                return navigate("/productincart");
+              }}
+            >
+              <Badge color="secondary">
+                <ShoppingCartIcon />{" "}
+              </Badge>{" "}
+              GO TO CART {cartCount}
+            </Button>
+          ) : null}
         </Toolbar>
       </AppBar>
       <Box component="nav">

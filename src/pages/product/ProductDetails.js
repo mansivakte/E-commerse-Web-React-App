@@ -2,19 +2,20 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import style from "./ProductDetails.module.css";
+import Cart from "./Cart";
 
 const ProductDetails = () => {
   const [details, setDetails] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
   const params = useParams();
-  console.log("params", params);
+  // console.log("params", params);
 
   useEffect(() => {
     axios
       .get(`https://api.escuelajs.co/api/v1/products/${params.id}`)
       .then((parameter) => {
         setDetails(parameter.data);
+        // console.log("Parameters", parameter);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -35,6 +36,7 @@ const ProductDetails = () => {
               width="300px"
               height={"300px"}
             />
+            <Cart data={details} />
           </div>
           <div>
             <h3>Product Details</h3>

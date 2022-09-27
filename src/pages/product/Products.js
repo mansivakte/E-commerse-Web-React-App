@@ -6,6 +6,8 @@ function Products() {
   const [Product, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  // const productList = useselecor()
+
   useEffect(() => {
     axios
       .get("https://api.escuelajs.co/api/v1/products")
@@ -13,6 +15,7 @@ function Products() {
         // console.log(parameters.data, "parameters data");
         setProduct(parameters.data);
         setIsLoading(false);
+        // dispatch product reducer la
         // console.log("parameters", parameters);
       })
       .catch((error) => {
