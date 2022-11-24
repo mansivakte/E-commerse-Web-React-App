@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 import { useDispatch } from "react-redux";
+import style from "./Product.module.css";
 
 function Products() {
   const dispatch = useDispatch();
@@ -47,7 +48,7 @@ function Products() {
   };
 
   return (
-    <div>
+    <div className={style.body}>
       {isLoading ? <h1>Loading.....!</h1> : <ProductCard data={Product} />}
       {/* <div className={style["search-box-style"]}>
         <input

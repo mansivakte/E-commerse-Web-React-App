@@ -1,7 +1,9 @@
 import { useSelector } from "react-redux";
 import style from "./CartItems.module.css";
+import { useNavigate } from "react-router-dom";
 
 const CartItems = () => {
+  let navigate = useNavigate();
   let amount = 0;
 
   const cartData = useSelector((state) => {
@@ -11,8 +13,10 @@ const CartItems = () => {
 
   return (
     <>
-      <h2>Shopping Cart</h2>
-
+      <h2 className={style["h2-style"]}>Shopping Cart</h2>
+      <p>
+        <a href="/">Deselect all the items!</a>
+      </p>
       <div className={style["cart-layout"]}>
         <div>
           {cartData.map((record) => {
@@ -50,9 +54,14 @@ const CartItems = () => {
           </p>
         </div>
         <div>
-          <h1>
-            <strong>Buy Now</strong>
-          </h1>
+          <button
+            className={style.btn}
+            onClick={() => {
+              return navigate("/checkout");
+            }}
+          >
+            Proceed to Buy
+          </button>
         </div>
       </div>
     </>

@@ -16,3 +16,14 @@ margin-left: 700px;
     display:flex
     
 }
+.btn{font: inherit;
+    cursor: pointer;
+    background-color: #ffd814;
+    border: 1px solid #ffd814;
+    color: black;
+    padding: 0.3rem 2rem;
+    border-radius: 20px;
+    font-weight: bold;}
+.h2-style{
+    font-family: Arial, sans-serif;
+}
