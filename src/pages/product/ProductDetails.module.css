@@ -1,4 +1,6 @@
 .productdetails{
     display: flex;
     justify-content: space-evenly;
+    font-family: "Times New Roman", Times, serif;
+    font-size: medium;
 }

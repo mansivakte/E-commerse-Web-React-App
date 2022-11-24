@@ -26,6 +26,7 @@ const productReducer = (state = initial_state, action) => {
       } else {
         // insert code
         newState.push({
+          image: action.image,
           quantity: action.quantity,
           productId: action.productId,
           productName: action.productName,

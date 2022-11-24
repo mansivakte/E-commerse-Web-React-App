@@ -3,7 +3,7 @@
 - product details madhun dispatch ( remove dipatch from cart )
 - css fixes
   - change qty buttons
-  - remove buy now
-  - remove footer
+  - remove buy now --------Done
+  - remove footer ---------Done
   - productincart page design
   - productincart product image with product list

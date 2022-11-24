@@ -18,38 +18,44 @@ function ProductCard(props) {
   // console.log(props, "props ");
   return props.data.map((record) => {
     return (
-      <Card
-        sx={{
-          maxWidth: 345,
-          display: "inline-block",
-          margin: "15px",
+      <Button
+        onClick={() => {
+          moreDetailsHandler(record.id);
         }}
       >
-        <img
-          src={record.images[0]}
-          alt="Card Img Name"
-          width="300px"
-          height={"300px"}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {record.title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            $.{record.price}
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button
-            onClick={() => {
-              moreDetailsHandler(record.id);
-            }}
-            size="small"
-          >
-            More Details
-          </Button>
-        </CardActions>
-      </Card>
+        <Card
+          sx={{
+            maxWidth: 345,
+            display: "inline-block",
+            margin: "15px",
+          }}
+        >
+          <img
+            src={record.images[0]}
+            alt="Card Img Name"
+            width="300px"
+            height={"300px"}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {record.title}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              $.{record.price}
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button
+              onClick={() => {
+                moreDetailsHandler(record.id);
+              }}
+              size="small"
+            >
+              More Details
+            </Button>
+          </CardActions>
+        </Card>
+      </Button>
     );
   });
 }

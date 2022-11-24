@@ -51,6 +51,7 @@ export default function Cart(props) {
           onClick={() => {
             dispatch({
               type: PRODUCTS,
+              image: props.data.images[0],
               quantity: itemCount,
               productId: props.data.id,
               productName: props.data.title,
@@ -60,7 +61,7 @@ export default function Cart(props) {
         >
           Add To Cart
         </Button>
-        <Button variant="contained">BUY NOW</Button>
+        {/* <Button variant="contained">BUY NOW</Button> */}
       </div>
     </div>
   );

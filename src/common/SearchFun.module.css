@@ -1,0 +1,10 @@
+.searchbox{
+    height: 40px;
+    width: 300px;
+    font-size: larger;
+    padding-left: 25px;
+    background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat left;
+    background-size: 20px;
+    background-color: whitesmoke;
+    border: 1px solid whitesmoke
+  }
