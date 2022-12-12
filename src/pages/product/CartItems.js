@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import style from "./CartItems.module.css";
 import { useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
 
 const CartItems = () => {
   let navigate = useNavigate();
@@ -35,6 +36,7 @@ const CartItems = () => {
                       height={"150px"}
                     ></img>
                   </div>
+
                   <div className={style["cart-style"]}>
                     <p>Product Name: {record.productName}</p>
                     <p>Product Price: {record.productPrice}</p>
@@ -57,7 +59,7 @@ const CartItems = () => {
           <button
             className={style.btn}
             onClick={() => {
-              return navigate("/checkout");
+              return navigate("/myhome.in/buy");
             }}
           >
             Proceed to Buy

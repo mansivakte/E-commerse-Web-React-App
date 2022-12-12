@@ -8,6 +8,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { PRODUCTS } from "../../store/constant";
+import style from "./Cart.module.css";
 
 export default function Cart(props) {
   console.log("PROPS.data", props.data);
@@ -16,51 +17,57 @@ export default function Cart(props) {
 
   return (
     <div style={{ display: "block", padding: 30 }}>
-      <h4>Add To Cart</h4>
-      <div>
-        <Button>
-          <ButtonGroup>
-            <Button
-              onClick={() => {
-                setItemCount(Math.max(itemCount - 1, 0));
-              }}
-            >
-              {" "}
-              <RemoveIcon fontSize="small" />
-            </Button>
-            <Button
-              onClick={() => {
-                setItemCount(Math.max(itemCount - 1, 0));
-              }}
-            >
-              <Badge color="secondary" badgeContent={itemCount}>
-                <ShoppingCartIcon />
-              </Badge>
-            </Button>
-            <Button
-              onClick={() => {
-                setItemCount(itemCount + 1);
-              }}
-            >
-              {" "}
-              <AddIcon fontSize="small" />
-            </Button>
-          </ButtonGroup>
-        </Button>
-        <Button
-          onClick={() => {
-            dispatch({
-              type: PRODUCTS,
-              image: props.data.images[0],
-              quantity: itemCount,
-              productId: props.data.id,
-              productName: props.data.title,
-              productPrice: props.data.price,
-            });
-          }}
-        >
-          Add To Cart
-        </Button>
+      <div className={style.cart}>
+        <div>
+          <Button>
+            <ButtonGroup>
+              <Button
+                onClick={() => {
+                  setItemCount(Math.max(itemCount - 1, 0));
+                }}
+              >
+                {" "}
+                <RemoveIcon fontSize="small" />
+              </Button>
+              <Button
+                onClick={() => {
+                  setItemCount(Math.max(itemCount - 1, 0));
+                }}
+              >
+                <Badge color="secondary" badgeContent={itemCount}>
+                  <ShoppingCartIcon />
+                </Badge>
+              </Button>
+              <Button
+                onClick={() => {
+                  setItemCount(itemCount + 1);
+                }}
+              >
+                {" "}
+                <AddIcon fontSize="small" />
+              </Button>
+            </ButtonGroup>
+          </Button>
+        </div>
+        <div>
+          <button
+            type="button"
+            class="btn btn-dark"
+            onClick={() => {
+              dispatch({
+                type: PRODUCTS,
+                image: props.data.images[0],
+                quantity: itemCount,
+                productId: props.data.id,
+                productName: props.data.title,
+                productPrice: props.data.price,
+              });
+            }}
+          >
+            Add To Cart
+          </button>
+        </div>
+
         {/* <Button variant="contained">BUY NOW</Button> */}
       </div>
     </div>

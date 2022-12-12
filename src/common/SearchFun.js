@@ -3,7 +3,7 @@ import axios from "axios";
 import style from "./SearchFun.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 
-const SearchFun = () => {
+const Searchfun = () => {
   const [record, setRecord] = useState([]);
   const [filterVal, setFilterVal] = useState("");
   const [searchApiData, setSearchApiData] = useState("");
@@ -11,10 +11,9 @@ const SearchFun = () => {
   useEffect(() => {
     axios
       .get("https://api.escuelajs.co/api/v1/products")
-      .then((params) => {
-        console.log("Params Data", params.data);
-        setRecord(params.data);
-        setSearchApiData(params.data);
+      .then((parameters) => {
+        setRecord(parameters.data);
+        setSearchApiData(parameters.data);
       })
       .catch((error) => {
         console.log("error", error);
@@ -37,14 +36,18 @@ const SearchFun = () => {
   };
 
   return (
-    <div className={style["search-box-style"]}>
-      <input
-        className={style.searchbox}
-        placeholder="Search.."
-        value={filterVal}
-        onInput={(e) => handleFilter(e)}
-      ></input>
+    <div>
+      <form className="form-inline my-2 my-lg-0">
+        <input
+          className="form-control mr-sm-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          value={filterVal}
+          onInput={(e) => handleFilter(e)}
+        />
+      </form>
     </div>
   );
 };
-export default SearchFun;
+export default Searchfun;

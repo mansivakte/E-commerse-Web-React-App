@@ -12,7 +12,7 @@ function ProductCard(props) {
 
   const moreDetailsHandler = (id) => {
     console.log("more details");
-    return navigate(`/details/${id}`);
+    return navigate(`/product/${id}`);
   };
 
   // console.log(props, "props ");
@@ -37,27 +37,63 @@ function ProductCard(props) {
             height={"300px"}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography
+              gutterBottom
+              component="div"
+              class="fw-bolder text-center fs-6"
+            >
               {record.title}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              class="card-text lead fe-bold"
+            >
               $.{record.price}
             </Typography>
           </CardContent>
           <CardActions>
-            <Button
+            <button
               onClick={() => {
                 moreDetailsHandler(record.id);
               }}
-              size="small"
+              // size="small"
+              type="button"
+              class="btn btn-secondary"
             >
               More Details
-            </Button>
+            </button>
           </CardActions>
         </Card>
+        ;
       </Button>
     );
   });
 }
 
 export default ProductCard;
+
+{
+  /* <div className="col-md-3 d-flex">
+<div class="card">
+  <img
+    src={record.images[0]}
+    class="card-img-top"
+    alt="product.img"
+  ></img>
+  <div class="card-body">
+    <h5 class="cart-title">{record.title}</h5>
+    <p class="card-text"> $.{record.price}</p>
+    <button
+      class="btn btn-primary"
+      onClick={() => {
+        moreDetailsHandler(record.id);
+      }}
+      size="small"
+    >
+      More Details
+    </button>
+  </div>
+</div>
+</div> */
+}

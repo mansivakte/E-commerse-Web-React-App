@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 import { useDispatch } from "react-redux";
 import style from "./Product.module.css";
+import Loading from "../Loading";
 
 function Products() {
   const dispatch = useDispatch();
@@ -32,34 +33,36 @@ function Products() {
       });
   }, []);
 
-  const handleFilter = (e) => {
-    if (e.target.value == "") {
-      setProduct(searchApiData);
-    } else {
-      const filterResult = searchApiData.filter(
-        (item) =>
-          item.title.toLowerCase().includes(e.target.value) ||
-          item.category.name.toLowerCase().includes(e.target.value) ||
-          item.description.toLowerCase().includes(e.target.value)
-      );
-      setProduct(filterResult);
-    }
-    setFilterVal(e.target.value);
-  };
-
   return (
-    <div className={style.body}>
-      {isLoading ? <h1>Loading.....!</h1> : <ProductCard data={Product} />}
-      {/* <div className={style["search-box-style"]}>
-        <input
-          className={style.searchbox}
-          placeholder="Search.."
-          value={filterVal}
-          onInput={(e) => handleFilter(e)}
-        ></input>
-      </div> */}
+    <div>
+      <div className="container my-5 py-5">
+        <div className="row">
+          <div className="col-12 mb-5">
+            <h1 className="diaplay-6 fw-bolder text-center">Latest Products</h1>
+            <hr></hr>
+          </div>
+        </div>
+        <div className={style.body}>
+          {isLoading ? <Loading /> : <ProductCard data={Product} />}
+        </div>
+      </div>
     </div>
   );
 }
 
 export default Products;
+
+// const handleFilter = (e) => {
+//   if (e.target.value == "") {
+//     setProduct(searchApiData);
+//   } else {
+//     const filterResult = searchApiData.filter(
+//       (item) =>
+//         item.title.toLowerCase().includes(e.target.value) ||
+//         item.category.name.toLowerCase().includes(e.target.value) ||
+//         item.description.toLowerCase().includes(e.target.value)
+//     );
+//     setProduct(filterResult);
+//   }
+//   setFilterVal(e.target.value);
+// };

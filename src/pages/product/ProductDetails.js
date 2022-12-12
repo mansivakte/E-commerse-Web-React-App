@@ -29,22 +29,24 @@ const ProductDetails = () => {
         <h1>Loading.....!</h1>
       ) : (
         <div className={style.productdetails}>
-          <div>
+          <div className="col-md-6 ">
             <img
               src={details.images[0]}
               alt="Card Img Name"
-              width="300px"
-              height={"300px"}
+              width="400px"
+              height="400px"
             />
-            <Cart data={details} />
           </div>
-          <div>
-            <h3>Product Details</h3>
-            <p>Product Id : {details.id}</p>
-            <p>Product Title: {details.title}</p>
-            <p>Product Price: {details.price}</p>
-            <p>Product Category Name: {details.category.name}</p>
-            <p>Product Description: {details.description}</p>
+          <div className="col-md-6">
+            <h1 className="display-5 fw-bold">
+              {details.title}
+              <span>
+                <p className="lead">({details.category.name})</p>
+              </span>
+            </h1>
+            <h2 className="display-6 fw-bold my-4">$.{details.price}</h2>
+            <p className="lead">{details.description}</p>
+            <Cart data={details} />
           </div>
         </div>
       )}
@@ -53,3 +55,23 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
+{
+  /* <div className="col-md-6">
+{" "}
+<img
+  src={details.images[0]}
+  alt="Card Img Name"
+  width="400px"
+  height={"400px"}
+/>
+</div>
+<div className="col-md-6">
+<h1 className="display-5">{details.title}</h1>
+<p className="lead fw-bolder">
+  Rating <i className="fa fa-start"></i>
+</p>
+<h3 className="display-6 fw-bold my-4"> $.{details.price}</h3>
+<p className="lead">{details.category.name}</p>
+<p className="lead">{details.description}</p>
+</div> */
+}

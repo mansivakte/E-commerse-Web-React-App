@@ -115,7 +115,7 @@ function Header(props) {
                 color="inherit"
                 onClick={() => {
                   localStorage.removeItem("isUserLogin");
-                  return navigate("/cartitems");
+                  return navigate("/myhome.in/cart");
                 }}
               >
                 <Badge color="secondary" badgeContent={cartCount}>

@@ -1,6 +1,8 @@
 .productdetails{
     display: flex;
     justify-content: space-evenly;
-    font-family: "Times New Roman", Times, serif;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    /* font-family: "Times New Roman", Times, serif; */
     font-size: medium;
+    color: black;
 }
