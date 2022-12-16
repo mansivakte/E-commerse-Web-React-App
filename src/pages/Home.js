@@ -1,14 +1,15 @@
 import { Fragment } from "react";
 import Background from "./Background";
 import Products from "./product/Products";
-import UncontrolledExample from "../common/Slider";
+import { Footer } from "../common/Footer";
 
 const Home = (props) => {
   return (
     <Fragment>
-      <UncontrolledExample />
-      {/* <Background /> */}
+      <Background />
+
       <Products />
+      <Footer />
     </Fragment>
   );
 };

@@ -9,7 +9,7 @@ export default function Background() {
           src={BgImg}
           class="card-img"
           alt="Background img"
-          height="550px"
+          height="600px"
         ></img>
         <div class="card-img-overlay d-flex flex-column justify-content-center">
           <div className="container">

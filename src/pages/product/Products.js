@@ -4,6 +4,7 @@ import ProductCard from "./ProductCard";
 import { useDispatch } from "react-redux";
 import style from "./Product.module.css";
 import Loading from "../Loading";
+import UncontrolledExample from "../../common/Slider";
 
 function Products() {
   const dispatch = useDispatch();
@@ -35,6 +36,7 @@ function Products() {
 
   return (
     <div>
+      <UncontrolledExample />
       <div className="container my-5 py-5">
         <div className="row">
           <div className="col-12 mb-5">

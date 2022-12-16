@@ -36,7 +36,6 @@ function App() {
           <Route path="/myhome.in/cart" element={<CartItems />}></Route>
           <Route path="/myhome.in/buy" element={<Checkout />}></Route>
         </Routes>
-        <Footer />
       </BrowserRouter>
     </Provider>
   );

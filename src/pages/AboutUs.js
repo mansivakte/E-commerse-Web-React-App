@@ -17,7 +17,7 @@ const AboutUs = () => {
         store. Use our services to pick up or return what you've bought,
         in-store across a pan-India network of more than 1,600 stores and over a
         hundred partner brands. Also Stay with our influencers on the
-        "MYCOLLECTION" Magazine, which is the place for real advice from real
+        MYCOLLECTION" Magazine, which is the place for real advice from real
         people. Get their take on what's happening in fashion, tech and life. We
         bring to you apparel, accessories - including shoes, bags, belts and
         watches, and home dceor from the best international luxury labels. Our

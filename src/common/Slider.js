@@ -20,7 +20,7 @@ function UncontrolledExample() {
           className="d-block w-100"
           src={s1}
           alt="First slide"
-          height="500px"
+          height="420px"
         />
         {/* <Carousel.Caption>
           <h3>First slide label</h3>
@@ -36,7 +36,7 @@ function UncontrolledExample() {
           className="d-block w-100"
           src={s2}
           alt="Second slide"
-          height="500px"
+          height="420px"
         />
       </Carousel.Item>
 
@@ -47,7 +47,7 @@ function UncontrolledExample() {
           className="d-block w-100 "
           src={s3}
           alt="Third slide"
-          height="500px"
+          height="420px"
         />
       </Carousel.Item>
 
@@ -57,7 +57,7 @@ function UncontrolledExample() {
           className="d-block w-100 "
           src={s4}
           alt="Forth slide"
-          height="500px"
+          height="420px"
         />
       </Carousel.Item>
 
@@ -67,7 +67,7 @@ function UncontrolledExample() {
           className="d-block w-100 "
           src={s5}
           alt="Fifth slide"
-          height="500px"
+          height="420px"
         />
       </Carousel.Item>
     </Carousel>

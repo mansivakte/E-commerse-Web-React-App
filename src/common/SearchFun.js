@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import style from "./SearchFun.module.css";
-import SearchIcon from "@mui/icons-material/Search";
+import ProductCard from "../pages/product/ProductCard";
 
 const Searchfun = () => {
   const [record, setRecord] = useState([]);

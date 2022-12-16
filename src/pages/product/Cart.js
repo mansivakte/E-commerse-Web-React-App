@@ -29,13 +29,9 @@ export default function Cart(props) {
                 {" "}
                 <RemoveIcon fontSize="small" />
               </Button>
-              <Button
-                onClick={() => {
-                  setItemCount(Math.max(itemCount - 1, 0));
-                }}
-              >
+              <Button>
                 <Badge color="secondary" badgeContent={itemCount}>
-                  <ShoppingCartIcon />
+                  <ShoppingCartIcon />{" "}
                 </Badge>
               </Button>
               <Button
